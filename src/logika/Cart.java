@@ -1,6 +1,8 @@
 
 package logika;
 
+import java.math.BigDecimal;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
@@ -65,6 +67,17 @@ public class Cart {
         }
         return this.list;
     }
+
+	@Override
+	public String toString() {
+		StringBuilder sb=new StringBuilder("\n--Cart includes: --");
+		for(Product p:list){
+			sb.append("\nName: "+p.getName()+", quantity: "+p.getQuantity()+" \n, price: ");
+			BigDecimal bd=new BigDecimal(p.getPrice());
+			sb.append((new DecimalFormat("#,##0.00").format(bd)));
+		}
+		return sb.toString();
+	}
     
 
 }

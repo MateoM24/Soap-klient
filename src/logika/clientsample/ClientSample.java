@@ -3,6 +3,8 @@ package logika.clientsample;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.sun.org.apache.xml.internal.serialize.LineSeparator;
+
 import logika.*;
 
 public class ClientSample {
@@ -27,10 +29,10 @@ public class ClientSample {
 	        list.add(p1);
 	        list.add(p2);
 	        
-	        System.out.println("Server said: " + port1.getCartValue(cart));
+	        System.out.printf("Server said:\n'The most expensive product is for:' %.2f",port1.getCartValue(cart));
 	        //Please input the parameters instead of 'null' for the upper method!
 	
-	        System.out.println("Server said: " + port1.discountCart(cart,10.0));
+	        System.out.println("\nServer said: " + port1.discountCart(cart,10.0));
 	        //Please input the parameters instead of 'null' for the upper method!
 	/*
 	        System.out.println("Server said: " + port1.getMostExpensiveProduct(null));
