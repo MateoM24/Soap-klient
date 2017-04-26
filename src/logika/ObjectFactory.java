@@ -30,6 +30,7 @@ public class ObjectFactory {
     private final static QName _GetCartValueResponse_QNAME = new QName("http://logika/", "getCartValueResponse");
     private final static QName _GetMostExpensiveProduct_QNAME = new QName("http://logika/", "getMostExpensiveProduct");
     private final static QName _GetMostExpensiveProductResponse_QNAME = new QName("http://logika/", "getMostExpensiveProductResponse");
+    private final static QName _NoCartException_QNAME = new QName("http://logika/", "NoCartException");
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: logika
@@ -84,6 +85,14 @@ public class ObjectFactory {
      */
     public GetMostExpensiveProductResponse createGetMostExpensiveProductResponse() {
         return new GetMostExpensiveProductResponse();
+    }
+
+    /**
+     * Create an instance of {@link NoCartException }
+     * 
+     */
+    public NoCartException createNoCartException() {
+        return new NoCartException();
     }
 
     /**
@@ -154,6 +163,15 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://logika/", name = "getMostExpensiveProductResponse")
     public JAXBElement<GetMostExpensiveProductResponse> createGetMostExpensiveProductResponse(GetMostExpensiveProductResponse value) {
         return new JAXBElement<GetMostExpensiveProductResponse>(_GetMostExpensiveProductResponse_QNAME, GetMostExpensiveProductResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link NoCartException }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://logika/", name = "NoCartException")
+    public JAXBElement<NoCartException> createNoCartException(NoCartException value) {
+        return new JAXBElement<NoCartException>(_NoCartException_QNAME, NoCartException.class, null, value);
     }
 
 }

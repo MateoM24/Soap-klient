@@ -1,6 +1,9 @@
 
 package logika;
 
+import java.math.BigDecimal;
+import java.text.DecimalFormat;
+
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlType;
@@ -94,5 +97,8 @@ public class Product {
     public void setQuantity(int value) {
         this.quantity = value;
     }
-
+    @Override
+	public String toString() {
+		return "Product [name=" + name + ", price=" + (new DecimalFormat("#,##0.00").format(new BigDecimal(price))) + ", quantity=" + quantity + "]";
+	}
 }
